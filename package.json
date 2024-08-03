@@ -14,14 +14,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/chriszarate/bookmarkleter.git"
+    "url": "git://github.com/wolfpeyton/bookmarkleter.git"
   },
-  "author": "Chris Zarate",
+  "author": "Peyton Wolf",
   "license": "PDDL-1.0",
   "bugs": {
-    "url": "https://github.com/chriszarate/bookmarkleter/issues"
+    "url": "https://github.com/wolfpeyton/bookmarkleter/issues"
   },
-  "homepage": "https://github.com/chriszarate/bookmarkleter",
+  "homepage": "https://github.com/wolfpeyton/bookmarkleter",
   "devDependencies": {
     "angular": "1.8.3",
     "browserify": "17.0.0",
