@@ -1,6 +1,6 @@
 # Super Bookmarkleter
 
-This is a fork of chriszarate's original [bookmarkleter][original-gh] with some additional features.
+This is a fork of chriszarate's original [bookmarkleter][original-gh] with some additional features:
 
 - Preserve %s for [Chrome site search][chrome-site-search-doc]
 
@@ -12,7 +12,7 @@ You have JavaScript. You need a [bookmarklet][bookmarklet]. This does that.
 
 Create bookmarklets in your browser with a simple copy and paste.
 
-**https://chriszarate.github.io/bookmarkleter/**
+**https://wolfpeyton.github.io/super-bookmarkleter/**
 
 ## Options
 
@@ -20,6 +20,8 @@ All options are Boolean flags.
 
   * `urlencode` (default `true`): URL-encode reserved characters: \[space\], %,
     ", <, >, #, @, &, ?
+
+    * `preserveSiteSearch` (default `false`): Don't url encode the sequence `%s`.
 
   * `iife` (default `false`): Wrap in an [IIFE][iife] (anonymizing function) to
     prevent exposing variables to the page on which the bookmarklet is running.
