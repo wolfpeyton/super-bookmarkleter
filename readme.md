@@ -1,8 +1,10 @@
-# Bookmarkleter
+# Super Bookmarkleter
 
-[![Build status][build-status]][travis-ci]
-[![Test coverage][test-coverage]][codecov]
-[![NPM version][npm-version]][fury-io]
+This is a fork of chriszarate's original [bookmarkleter][original-gh] with some additional features.
+
+- Chrome site search 
+
+# Bookmarkleter
 
 You have JavaScript. You need a [bookmarklet][bookmarklet]. This does that.
 
@@ -41,31 +43,14 @@ All options are Boolean flags.
   * `jQuery` (default `false`): Make sure a modern version (>= 1.7) of
     [jQuery][jquery] is available for your code.
 
-### Deprecated options
-
-  * `minify`: Code is always minified (with comments removed) using
-    [babel-minify][babel-minify]. Bookmarklets require minification to function
-    correctly. Use `mangleVars` option for additional compactness.
-
 ## License
 
 This is free software. It is released to the public domain without warranty.
 
-## Thanks
 
-Thanks to [@jpillora][jpillora] and [@alanhogan][alanhogan] for updates and contributions.
-
-
-[build-status]: https://secure.travis-ci.org/chriszarate/bookmarkleter.svg?branch=master
-[travis-ci]: http://travis-ci.org/chriszarate/bookmarkleter
-[test-coverage]: https://codecov.io/gh/chriszarate/bookmarkleter/branch/master/graph/badge.svg
-[codecov]: https://codecov.io/gh/chriszarate/bookmarkleter
-[npm-version]: https://badge.fury.io/js/bookmarkleter.svg
-[fury-io]: http://badge.fury.io/js/bookmarkleter
 [bookmarklet]: http://en.wikipedia.org/wiki/Bookmarklet "Wikipedia entry on Bookmarklets"
 [iife]: http://en.wikipedia.org/wiki/Immediately-invoked_function_expression "Immediately invoked function expression"
 [babel]: https://babeljs.io
 [babel-minify]: https://github.com/babel/minify
 [jquery]: http://jquery.com
-[jpillora]: https://github.com/jpillora
-[alanhogan]: https://github.com/alanhogan
+[original-gh]: https://github.com/chriszarate/bookmarkleter
