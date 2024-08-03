@@ -128,6 +128,16 @@
 				transform: rotate(-10deg);
 			}
 
+			.disabled-label {
+    		color: grey;
+  		}
+
+			.enabled-label {
+				color: black;
+			}
+
+			a:visited { color:blue; }
+
 		</style>
 
 		<title>Super Bookmarkleter</title>
@@ -154,6 +164,11 @@
 					<input class="pointer" type="checkbox" id="urlencode" ng-model="options.urlencode" ng-change="updateBookmarklet(options)"></input>
 					<label class="pointer" for="urlencode">URL-encode reserved characters: [space], %, &quot;, &lt;, &gt;, #, @, &amp;, ?</label>
 				</fieldset>
+
+				<div style="margin-left: 20px;">
+					<input class="pointer" type="checkbox" id="preserveSiteSearch" ng-model="options.preserveSiteSearch" ng-disabled="!options.urlencode" ng-change="updateBookmarklet(options)"></input>
+					<label class="pointer" for="preserveSiteSearch" ng-class="{'disabled-label': !options.urlencode, 'enabled-label': options.urlencode}">Preserve %s for <a href="https://support.google.com/chrome/answer/95426#zippy=%2Curl-with-s-in-place-of-query-field">Chrome site search</a> feature </label>
+				</div>
 
 				<fieldset>
 					<input class="pointer" type="checkbox" id="iife" ng-model="options.iife" ng-change="updateBookmarklet(options)"></input>

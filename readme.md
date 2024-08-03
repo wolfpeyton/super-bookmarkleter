@@ -2,7 +2,7 @@
 
 This is a fork of chriszarate's original [bookmarkleter][original-gh] with some additional features.
 
-- Chrome site search 
+- Preserve %s for [Chrome site search][chrome-site-search-doc]
 
 # Bookmarkleter
 
@@ -43,3 +43,4 @@ This is free software. It is released to the public domain without warranty.
 [babel-minify]: https://github.com/babel/minify
 [jquery]: http://jquery.com
 [original-gh]: https://github.com/chriszarate/bookmarkleter
+[chrome-site-search-doc]:https://support.google.com/chrome/answer/95426#zippy=%2Curl-with-s-in-place-of-query-field

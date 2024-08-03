@@ -18,7 +18,8 @@ app.controller('appController', ['$scope', function ($scope) {
     iife: true,
     mangleVars: true,
     transpile: false,
-    jQuery: false
+    jQuery: false,
+    preserveSiteSearch: false
   };
 
   $scope.name = $scope.displayName = defaultName;

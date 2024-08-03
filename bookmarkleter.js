@@ -36,8 +36,14 @@ const jquery = code => `void function ($) {
 const iife = code => `void function () {${code}\n}();`;
 const minify = ( code, mangle ) => babelMinify( code, { mangle, deadcode: mangle }, { babel, comments: false } ).code;
 const prefix = code => `javascript:${code}`;
-const transpile = code => babel.transform( code, { comments: false, filename: 'bookmarklet.js', presets: [ 'env' ], targets: '> 2%, not dead' } ).code
-const urlencode = code => code.replace( new RegExp( specialCharacters.join( '|' ), 'g' ), encodeURIComponent );
+const transpile = code => babel.transform( code, { comments: false, filename: 'bookmarklet.js', presets: [ 'env' ], targets: '> 2%, not dead' } ).code;
+const urlencode = ( code, preserveSiteSearch ) => code.replace( new RegExp( specialCharacters.join( '|' ), 'g' ), (match, offset, string) => {
+  // Skip encoding '%s' if preserveSiteSearch is true, otherwise encode normally
+  if (preserveSiteSearch && match === '%' && string[offset + 1] === 's') {
+    return '%';
+  }
+  return encodeURIComponent(match);
+});
 
 // Create a bookmarklet.
 module.exports = ( code, options = {} ) => {
@@ -69,7 +75,7 @@ module.exports = ( code, options = {} ) => {
 
   // URL-encode by default.
   if ( options.urlencode || 'undefined' === typeof options.urlencode ) {
-    result = urlencode( result );
+    result = urlencode(result, options.preserveSiteSearch || false);
   }
 
   // Add javascript prefix.
