@@ -14,17 +14,6 @@ Create bookmarklets in your browser with a simple copy and paste.
 
 **https://chriszarate.github.io/bookmarkleter/**
 
-## NPM module
-
-```
-npm install --save bookmarkleter
-```
-
-```js
-const bookmarkleter = require( 'bookmarkleter' );
-const bookmarklet = bookmarkleter( code, options );
-```
-
 ## Options
 
 All options are Boolean flags.
