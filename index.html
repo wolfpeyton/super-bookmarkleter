@@ -89,7 +89,7 @@
 				padding: 0.25em 0.5em;
 			}
 
-			#OutputLink {
+			#OutputLink, #DownloadLink {
 				font-size: 0.9em;
 			}
 
@@ -208,7 +208,8 @@
 
 			<fieldset id="OutputFields">
 				<textarea ng-bind="output" id="Output" wrap="hard" readonly></textarea>
-				<div id="OutputLink" ng-class="output ? '' : 'disabled'">Drag this link to your bookmarks bar: <a id="OutputHref" ng-attr-href="{{ output }}">{{ displayName }}</a></div>
+				<div id="OutputLink" ng-class="output ? '' : 'disabled'" ng-show="!options.preserveSiteSearch">Drag this link to your bookmarks bar: <a id="OutputHref" ng-attr-href="{{ output }}">{{ displayName }}</a></div>
+				<div id="DownloadLink" ng-class="output ? '' : 'disabled'" ng-show="options.preserveSiteSearch">Copy your site search bookmarklet above, or download it for later: <a id="DownloadHref" download="{{ displayName }}.txt">{{ displayName }}.txt</a></div>
 			</fieldset>
 
 		</form>
