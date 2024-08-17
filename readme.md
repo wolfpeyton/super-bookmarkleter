@@ -1,6 +1,6 @@
 # Super Bookmarkleter
 
-This is a fork of chriszarate's original [bookmarkleter][original-gh] with some additional features:
+This is a friendly fork of chriszarate's original [bookmarkleter][original-gh] with some additional features:
 
 - Preserve %s for [Chrome site search][chrome-site-search-doc]
 
