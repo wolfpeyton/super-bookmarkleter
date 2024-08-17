@@ -1,6 +1,6 @@
 {
-  "name": "bookmarkleter",
-  "version": "1.2.0",
+  "name": "super-bookmarkleter",
+  "version": "1.3.0",
   "description": "You have JavaScript. You need a bookmarklet. This does that.",
   "main": "bookmarkleter.js",
   "engines": {
@@ -14,14 +14,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/wolfpeyton/bookmarkleter.git"
+    "url": "git://github.com/wolfpeyton/super-bookmarkleter.git"
   },
   "author": "Peyton Wolf",
   "license": "PDDL-1.0",
   "bugs": {
-    "url": "https://github.com/wolfpeyton/bookmarkleter/issues"
+    "url": "https://github.com/wolfpeyton/super-bookmarkleter/issues"
   },
-  "homepage": "https://github.com/wolfpeyton/bookmarkleter",
+  "homepage": "https://github.com/wolfpeyton/super-bookmarkleter",
   "devDependencies": {
     "angular": "1.8.3",
     "browserify": "17.0.0",
