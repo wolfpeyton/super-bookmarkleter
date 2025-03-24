@@ -3,6 +3,7 @@
 This is a friendly fork of chriszarate's original [bookmarkleter][original-gh] with some additional features:
 
 - Preserve %s for [Chrome site search][chrome-site-search-doc]
+- Allow use of single quotes (which don't need to be URL-encoded) instead of double quotes.
 
 # Bookmarkleter
 
@@ -21,13 +22,15 @@ All options are Boolean flags.
   * `urlencode` (default `true`): URL-encode reserved characters: \[space\], %,
     ", <, >, #, @, &, ?
 
-    * `preserveSiteSearch` (default `false`): Don't url encode the sequence `%s`.
+    * `preserveSiteSearch` (default `true`): Don't url encode the sequence `%s`.
 
   * `iife` (default `false`): Wrap in an [IIFE][iife] (anonymizing function) to
     prevent exposing variables to the page on which the bookmarklet is running.
 
-  * `mangleVars` (default `false`): Mangle variable names and other tokens to
+  * `mangleVars` (default `true`): Mangle variable names and other tokens to
     further reduce size.
+
+  * `useSingleQuotes` (default `true`): Use single quotes instead of double.
 
   * `transpile` (default `false`): Transpile for browsers using [Babel][babel].
 

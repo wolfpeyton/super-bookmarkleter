@@ -167,10 +167,10 @@
 					<label class="pointer" for="urlencode">URL-encode reserved characters: [space], %, &quot;, &lt;, &gt;, #, @, &amp;, ?</label>
 				</fieldset>
 
-				<div style="margin-left: 20px;">
+				<fieldset style="margin-left: 20px;">
 					<input class="pointer" type="checkbox" id="preserveSiteSearch" ng-model="options.preserveSiteSearch" ng-disabled="!options.urlencode" ng-change="updateBookmarklet(options)"></input>
 					<label class="pointer" for="preserveSiteSearch" ng-class="{'disabled-label': !options.urlencode, 'enabled-label': options.urlencode}">Preserve %s for <a href="https://support.google.com/chrome/answer/95426#zippy=%2Curl-with-s-in-place-of-query-field">Chrome site search</a> feature </label>
-				</div>
+				</fieldset>
 
 				<fieldset>
 					<input class="pointer" type="checkbox" id="iife" ng-model="options.iife" ng-change="updateBookmarklet(options)"></input>
@@ -179,7 +179,12 @@
 
 				<fieldset>
 					<input class="pointer" type="checkbox" id="mangle" ng-model="options.mangleVars" ng-change="updateBookmarklet(options)"></input>
-					<label class="pointer" for="mangle">Mangle variables and remove dead code to reduce size.</label>
+					<label class="pointer" for="mangle">Mangle variables to reduce size.</label>
+				</fieldset>
+
+				<fieldset>
+					<input class="pointer" type="checkbox" id="useSingleQuotes" ng-model="options.useSingleQuotes" ng-change="updateBookmarklet(options)"></input>
+					<label class="pointer" for="useSingleQuotes">Use single quotes.</label>
 				</fieldset>
 
 				<fieldset>

@@ -1,6 +1,8 @@
 // Load dependencies.
 const babelMinify = require( 'babel-minify' );
 const babel = require( '@babel/standalone' );
+const acorn = require( 'acorn' );
+const escodegen = require( 'escodegen' );
 
 babel.transformSync = babel.transform;
 
@@ -34,7 +36,7 @@ const jquery = code => `void function ($) {
 }(window.jQuery);`;
 
 const iife = code => `void function () {${code}\n}();`;
-const minify = ( code, mangle ) => babelMinify( code, { mangle, deadcode: mangle }, { babel, comments: false } ).code;
+const minify = ( code, mangle ) => babelMinify( code, { mangle, deadcode: false, evaluate: false }, { babel, comments: false } ).code;
 const prefix = code => `javascript:${code}`;
 const transpile = code => babel.transform( code, { comments: false, filename: 'bookmarklet.js', presets: [ 'env' ], targets: '> 2%, not dead' } ).code;
 const urlencode = ( code, preserveSiteSearch ) => code.replace( new RegExp( specialCharacters.join( '|' ), 'g' ), (match, offset, string) => {
@@ -71,6 +73,30 @@ module.exports = ( code, options = {} ) => {
   // If code minifies down to nothing, stop processing.
   if ( '' === result.replace( /^"use strict";/, '').replace( /^void function\(\){}\(\);$/, '' ) ) {
     return null;
+  }
+
+  // Replace double quotes with single?
+  if (options.useSingleQuotes) {
+
+    const ast = acorn.parse(result, { ecmaVersion: 2020 });
+
+    result = escodegen.generate(ast, {
+      format: {
+        indent: {
+          style: '',
+        },
+        newline: '',
+        space: '',
+        quotes: 'single',
+        semicolons: false,
+        safeConcatenation: true,
+        preserveBlankLines: false
+      }
+    });
+    console.log(result);
+
+    // strip leading newline that for some reason gets generated
+    result = result.trim()
   }
 
   // URL-encode by default.

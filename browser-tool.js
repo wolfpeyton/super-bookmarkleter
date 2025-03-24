@@ -19,7 +19,8 @@ app.controller('appController', ['$scope', function ($scope) {
     mangleVars: true,
     transpile: false,
     jQuery: false,
-    preserveSiteSearch: false
+    preserveSiteSearch: true,
+    useSingleQuotes: true
   };
 
   $scope.name = $scope.displayName = defaultName;

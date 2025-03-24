@@ -1,6 +1,6 @@
 {
   "name": "super-bookmarkleter",
-  "version": "1.3.0",
+  "version": "1.4.0",
   "description": "You have JavaScript. You need a bookmarklet. This does that.",
   "main": "bookmarkleter.js",
   "engines": {
@@ -31,6 +31,8 @@
   },
   "dependencies": {
     "@babel/standalone": "7.21.2",
-    "babel-minify": "0.5.2"
+    "acorn": "^8.12.1",
+    "babel-minify": "0.5.2",
+    "escodegen": "^2.1.0"
   }
 }
